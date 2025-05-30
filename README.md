@@ -1,5 +1,11 @@
 # Aluguel-de-Filmes
 
+# Alunas
+
+Aline Almeida Faria Gomes
+Ana Luiza Amaro Gomes Silva
+Maria Eduarda Cavalcante Dias
+
 #  Sistema de Aluguel de Filmes
 
 Este e um projeto web simples para gerenciamento de aluguel de filmes, desenvolvido com HTML, CSS e JavaScript puro. O sistema permite login de usuarios, cadastro, visualizacao e aluguel de filmes.
