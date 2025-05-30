@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna a página responsiva -->
+        <title>Aluguel de Filmes</title> <!-- Título da aba do navegador -->
+        <script src="main.js"></script> <!-- Importa o arquivo JavaScript externo -->
+
+        <style>
+            /* Estilos gerais do corpo da página */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f3f3f3; /* Fundo branco */
+                color: #000000; /* Texto preto */
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Cabeçalho da página */
+            header {
+                background-color: #f3f3f3;
+                padding: 20px;
+                text-align: center;
+            }
+
+            /* Barra de navegação */
+            nav {
+                background-color: #dd3eca;
+                display: flex;
+                justify-content: center;
+                padding: 10px 0;
+            }
+
+            /* Links da navegação */
+            nav a {
+                color: #ffffff;
+                margin: 0 15px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            /* Efeito ao passar o mouse nos links */
+            nav a:hover {
+                text-decoration: underline;
+            }
+
+            /* Container da barra de busca */
+            .search-container {
+                text-align: center;
+                margin: 20px;
+            }
+        
+            /* Campo de busca */
+            .search-container input {
+                padding: 10px;
+                width: 300px;
+                border-radius: 5px;
+                border: none;
+                font-size: 16px;
+            }
+
+            /* Área que exibe os filmes em formato de grade */
+            .filmes {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Layout responsivo */
+                gap: 20px; /* Espaçamento entre os cards */
+                padding: 20px;
+            }
+
+            /* Estilo de cada card de filme */
+            .card {
+                background-color: #fbfbfb;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: left;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra */
+                transition: transform 0.3s; /* Animação suave ao passar o mouse */
+            }
+
+            /* Efeito ao passar o mouse no card */
+            .card:hover {
+                transform: scale(1.02); /* Aumenta um pouco o tamanho */
+            }
+
+            /* Título do filme */
+            .card h3 {
+                margin-top: 0;
+                font-size: 1.2em;
+            }
+
+            /* Parágrafos informativos do card */
+            .card p {
+                margin: 5px 0;
+            }
+
+            /* Botão de alugar */
+            .btn-alugar {
+                margin-top: 10px;
+                background-color: #dd3eca; /* Cor de fundo do botão */
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+
+            /* Efeito ao passar o mouse no botão */
+            .btn-alugar:hover {
+                background-color: #d02abc;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Barra de navegação com botões que acionam funções JS -->
+        <nav>
+            <a onclick="goToHome()">Home</a>
+            <a onclick="goToFilmesAlugados()">Meus Filmes Alugados</a>
+        </nav>
+
+        <!-- Cabeçalho com título e subtítulo -->
+        <header>
+            <h1>Seja Bem-vindo</h1>
+            <p>Alugue os melhores filmes online!</p>
+        </header>
+
+        <!-- Campo de busca de filmes -->
+        <div class="search-container">
+            <input type="text" id="filtroFilme" placeholder="Buscar filme..." onkeyup="filtrarFilmes()">
+            <!-- Ao digitar, chama a função 'filtrarFilmes()' -->
+        </div>
+        
+        <!-- Área principal com os cards de filmes -->
+        <main class="filmes">
+
+            <!-- Card de filme -->
+            <div class="card">
+                <h3>Titanic</h3>
+                <p><strong>Ano:</strong> 1997</p>
+                <p><strong>Duração:</strong> 3h 14min</p>
+                <button class="btn-alugar" value="1" onclick="alugarFilme(this)">Alugar</button>
+                <!-- Ao clicar, chama 'alugarFilme()' passando o botão como parâmetro -->
+            </div>
+
+            <div class="card">
+                <h3>Vingadores: Ultimato</h3>
+                <p><strong>Ano:</strong> 2019</p>
+                <p><strong>Duração:</strong> 3h 2min</p>
+                <button class="btn-alugar" value="2" onclick="alugarFilme(this)">Alugar</button>
+            </div>
+
+            <div class="card">
+                <h3>O Rei Leão</h3>
+                <p><strong>Ano:</strong> 2019</p>
+                <p><strong>Duração:</strong> 1h 58min</p>
+                <button class="btn-alugar" value="3" onclick="alugarFilme(this)">Alugar</button>
+            </div>
+
+            <div class="card">
+                <h3>Barbie</h3>
+                <p><strong>Ano:</strong> 2023</p>
+                <p><strong>Duração:</strong> 1h 54min</p>
+                <button class="btn-alugar" value="4" onclick="alugarFilme(this)">Alugar</button>
+            </div>
+
+            <div class="card">
+                <h3>Top Gun: Maverick</h3>
+                <p><strong>Ano:</strong> 2022</p>
+                <p><strong>Duração:</strong> 2h 11min</p>
+                <button class="btn-alugar" value="5" onclick="alugarFilme(this)">Alugar</button>
+            </div>
+
+            <div class="card">
+                <h3>Homem-Aranha: Sem Volta para Casa</h3>
+                <p><strong>Ano:</strong> 2021</p>
+                <p><strong>Duração:</strong> 2h 28min</p>
+                <button class="btn-alugar" value="6" onclick="alugarFilme(this)">Alugar</button>
+            </div>
+        </main>
+
+    </body>
+</html>

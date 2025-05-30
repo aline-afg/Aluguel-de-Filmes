@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!-- Define o idioma da página como português brasileiro -->
+    <head>
+        <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+        <title>Alugar Filme</title> <!-- Título exibido na aba do navegador -->
+        <script src="main.js"></script> <!-- Importa o script principal com funções JS -->
+
+        <style>
+            /* Estilo geral da página */
+            body {
+                background-color: #f3f3f3; /* Fundo branco */
+                color: #ffffff; /* Texto branco */
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Estilo do container centralizado */
+            .container {
+                max-width: 400px; /* Largura máxima do formulário */
+                margin: 200px auto; /* Centraliza vertical e horizontalmente */
+                background-color: #0e0e0e; /* Cor de fundo interna */
+                padding: 30px;
+                border-radius: 10px; /* Arredondamento dos cantos */
+                box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra */
+            }
+
+            /* Título do formulário */
+            h2 {
+                text-align: center;
+                color: #dd3eca; /* Rosa vibrante */
+            }
+
+            /* Estilo dos rótulos dos campos */
+            label {
+                display: block;
+                margin-top: 15px;
+                font-weight: bold;
+            }
+
+            /* Estilo dos campos de data */
+            input[type="date"] {
+                width: -webkit-fill-available; /* Ocupa toda a largura disponível */
+                padding: 10px;
+                margin-top: 5px;
+                border-radius: 5px;
+                border: none;
+            }
+
+            /* Estilo do botão de confirmação */
+            button {
+                margin-top: 20px;
+                width: 100%; /* Ocupa toda a largura */
+                padding: 12px;
+                background-color: #dd3eca; /* Rosa forte */
+                color: white;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            /* Cor alterada ao passar o mouse sobre o botão */
+            button:hover {
+                background-color: #c628a5;
+            }
+
+            /* Estilo do box de resumo (inativo no momento) */
+            .resumo {
+                margin-top: 30px;
+                background-color: #2b2b2b;
+                padding: 15px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2 id="tituloFilme">Alugar Filme</h2> <!-- Título dinâmico (pode ser alterado via JS) -->
+
+            <!-- Campo para selecionar a data de aluguel -->
+            <label for="dataAluguel">Data do Aluguel:</label>
+            <input type="date" id="dataAluguel" required>
+
+            <!-- Campo para selecionar a data de devolução -->
+            <label for="dataDevolucao">Data da Devolução:</label>
+            <input type="date" id="dataDevolucao" required>
+
+            <!-- Botão que confirma o aluguel (chama função JS) -->
+            <button onclick="confirmarAluguel()">Confirmar Aluguel</button>
+
+            <!-- Área para exibir o resumo do aluguel (atualmente comentada) -->
+            <!-- <div class="resumo" id="resumoAluguel" style="display:none;"></div> -->
+        </div>
+    </body>
+</html>

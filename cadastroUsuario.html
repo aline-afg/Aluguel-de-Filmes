@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!-- Define o idioma da página como português brasileiro -->
+    <head>
+        <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+        <title>Cadastro de Usuário</title> <!-- Título da aba do navegador -->
+        <script src="main.js"></script> <!-- Importa o script JavaScript com as funções -->
+
+        <style>
+            /* Estilo do corpo da página */
+            body {
+                background-color: #f2f2f2; /* Cor de fundo cinza claro */
+                font-family: Arial, sans-serif; /* Fonte usada no texto */
+            }
+
+            /* Container do formulário de cadastro */
+            .register-container {
+                width: 300px;
+                margin: 150px auto; /* Centraliza vertical e horizontalmente */
+                padding: 30px;
+                background-color: #fff; /* Fundo branco */
+                border-radius: 8px; /* Cantos arredondados */
+                box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra leve ao redor */
+            }
+
+            /* Título do formulário */
+            .register-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            /* Estilo dos campos de texto e senha */
+            input[type="text"],
+            input[type="password"] {
+                width: -webkit-fill-available; /* Faz o input ocupar toda a largura disponível */
+                padding: 10px;
+                margin: 8px 0;
+                border: 1px solid #ccc; /* Borda cinza clara */
+                border-radius: 4px; /* Bordas arredondadas */
+            }
+
+            /* Estilo do botão de cadastro */
+            input[type="submit"] {
+                width: 100%; /* Ocupa toda a largura */
+                padding: 10px;
+                background-color: #dd3eca; /* Fundo rosa forte */
+                color: white; /* Texto branco */
+                border: none;
+                border-radius: 4px;
+                cursor: pointer; /* Cursor de mão ao passar por cima */
+                margin-top: 10px;
+            }
+
+            /* Efeito ao passar o mouse no botão */
+            input[type="submit"]:hover {
+                background-color: #d02abc;
+            }
+
+            /* Container do link para login */
+            .login-link {
+                margin-top: 15px;
+                text-align: center;
+            }
+
+            /* Estilo do link para voltar ao login */
+            .login-link a {
+                color: #dd3eca;
+                text-decoration: none;
+            }
+
+            /* Efeito ao passar o mouse no link */
+            .login-link a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Formulário de cadastro de usuário -->
+        <div class="register-container">
+            <h2>Cadastro</h2>
+            <div>
+                <!-- Campo para o nome completo -->
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" onchange="handleChangeCadastro(this)" required>
+
+                <!-- Campo para o nome de usuário -->
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" onchange="handleChangeCadastro(this)" required>
+
+                <!-- Campo para a senha -->
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" onchange="handleChangeCadastro(this)" required>
+
+                <!-- Botão de envio do cadastro -->
+                <input type="submit" value="Cadastrar" onclick="handleCadastrarUser()">
+
+                <!-- Link para voltar à tela de login -->
+                <div class="login-link">
+                    <p>Já tem uma conta? <a onclick="goToLogin()">Voltar para Login</a></p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

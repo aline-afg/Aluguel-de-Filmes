@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+        <title>Login</title> <!-- Título que aparece na aba do navegador -->
+        <script src="main.js"></script> <!-- Importa o arquivo JavaScript externo -->
+
+        <style>
+            body {
+                background-color: #f2f2f2; /* Cor de fundo da página */
+                font-family: Arial, sans-serif; /* Fonte padrão da página */
+            }
+
+            .login-container {
+                width: 300px; /* Largura da caixa de login */
+                margin: 200px auto; /* Centraliza vertical e horizontalmente */
+                padding: 30px; /* Espaçamento interno */
+                background-color: #fff; /* Fundo branco */
+                border-radius: 8px; /* Cantos arredondados */
+                box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra ao redor */
+            }
+
+            .login-container h2 {
+                text-align: center; /* Centraliza o título */
+                margin-bottom: 20px; /* Espaço abaixo do título */
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                width: -webkit-fill-available; /* Ocupa toda a largura disponível */
+                padding: 10px; /* Espaçamento interno */
+                margin: 8px 0; /* Espaço acima e abaixo */
+                border: 1px solid #ccc; /* Borda cinza clara */
+                border-radius: 4px; /* Cantos arredondados */
+            }
+
+            input[type="submit"] {
+                width: 100%; /* Ocupa toda a largura */
+                padding: 10px; /* Espaçamento interno */
+                background-color: #dd3eca; /* Cor de fundo roxa */
+                color: white; /* Cor do texto */
+                border: none; /* Sem borda */
+                border-radius: 4px; /* Cantos arredondados */
+                cursor: pointer; /* Cursor de mão ao passar o mouse */
+                margin-top: 10px; /* Espaço acima */
+            }
+
+            input[type="submit"]:hover {
+                background-color: #d02abc; /* Cor mais escura ao passar o mouse */
+            }
+
+            .register-link {
+                margin-top: 15px; /* Espaço acima */
+                text-align: center; /* Centraliza o texto */
+            }
+
+            .register-link a {
+                color: #dd3eca; /* Cor do link */
+                text-decoration: none; /* Remove sublinhado padrão */
+            }
+
+            .register-link a:hover {
+                text-decoration: underline; /* Sublinha ao passar o mouse */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-container"> <!-- Container central para o formulário -->
+            <h2>Login</h2> <!-- Título do formulário -->
+
+            <div>
+                <!-- Campo de entrada para nome de usuário -->
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" onchange="handleUserNameChange()" required>
+
+                <!-- Campo de entrada para senha -->
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" onchange="handleUserNameChange()" required>
+
+                <!-- Botão para enviar os dados de login -->
+                <input type="submit" value="Entrar" onclick="handleSubmitUser()">
+
+                <!-- Link para cadastro, caso o usuário não tenha conta -->
+                <div class="register-link">
+                    <p>Não tem uma conta? <a onclick="goToCadastrarUsuario()">Cadastre-se</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
